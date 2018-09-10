@@ -7,6 +7,8 @@ Run command in the folder of your project: `npm install react-native-stylized-pl
 ## Usage
 Import and use CustomTextInput.
 
+    import CustomTextInput from 'react-native-stylized-placeholder';
+    
     <CustomTextInput name='restoreEmail'
 	    style={STYLES.input}
 	    onChangeText={(text) => {
