@@ -1,7 +1,5 @@
 import React from "react";
-import {Text, TextInput, View} from 'react-native';
-import {MethodService} from 'Services/MethodService';
-import STYLES from "../Login/styles";
+import {Text, TextInput, View, Platform} from 'react-native';
 
 let allowFontScaling, onChangeText, placeholder, placeholderStyle, placeholderTextColor, onRef, value, style, inputProps;
 
@@ -43,9 +41,16 @@ class CustomTextInput extends React.Component {
 
     clear() {
         this.setState({showPlaceholer: true});
-        this.input.setNativeProps({
-            text: ''
-        });
+        if (Platform.OS === 'ios') {
+            this.input.setNativeProps({ text: ' ' });
+            setTimeout(() => {
+                this.input.setNativeProps({ text: '' });
+            },5);
+        } else {
+            this.input.setNativeProps({
+                text: ''
+            });
+        }
     };
 
     render() {
