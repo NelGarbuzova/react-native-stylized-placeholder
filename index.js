@@ -1,8 +1,6 @@
 import React from "react";
 import {Text, TextInput, View, Platform} from 'react-native';
 
-let allowFontScaling, onChangeText, placeholder, placeholderStyle, placeholderTextColor, onRef, value, style, inputProps;
-
 class CustomTextInput extends React.Component {
 
     _onChangeText(text) {
@@ -19,7 +17,7 @@ class CustomTextInput extends React.Component {
     constructor(props) {
         super(props);
 
-        ({allowFontScaling, onChangeText, placeholder, placeholderStyle, placeholderTextColor, onRef, value, style, ...inputProps} = this.props);
+        let {allowFontScaling, onChangeText, placeholder, placeholderStyle, placeholderTextColor, onRef, value, style, ...inputProps} = this.props;
 
         this._onChangeText = this._onChangeText.bind(this);
 
@@ -29,12 +27,13 @@ class CustomTextInput extends React.Component {
         this.placeholderStyle = placeholderStyle;
         this.placeholderTextColor = placeholderTextColor;
         this.onRef = onRef;
+        this.value = value;
         this.style = style;
         this.inputProps = inputProps;
         this.input = {};
 
         this.state = {
-            showPlaceholer: value && value.length > 0 ? false : true,
+            showPlaceholer: this.value && this.value.length > 0 ? false : true,
             isFirstInit: true
         };
     };
@@ -87,7 +86,7 @@ class CustomTextInput extends React.Component {
 
                             if (this.state.isFirstInit) {
                                 this.input.setNativeProps({
-                                    text: value
+                                    text: this.value
                                 });
                                 this.setState({isFirstInit: false})
                             }
