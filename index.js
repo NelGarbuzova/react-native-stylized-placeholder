@@ -34,7 +34,7 @@ class CustomTextInput extends React.Component {
         this.input = {};
 
         this.state = {
-            showPlaceholer: true,
+            showPlaceholer: value && value.length > 0 ? false : true,
             isFirstInit: true
         };
     };
