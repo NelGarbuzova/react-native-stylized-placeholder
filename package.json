@@ -1,6 +1,6 @@
 {
   "name": "react-native-stylized-placeholder",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Custom React Native TextInput for styling placeholder",
   "main": "index.js",
   "scripts": {
