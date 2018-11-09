@@ -5,9 +5,9 @@ class CustomTextInput extends React.Component {
 
     _onChangeText(text) {
         if (text.length > 0) {
-            this.setState({showPlaceholer: false});
+            this.setState({showPlaceholer: false, value: text});
         } else {
-            this.setState({showPlaceholer: true});
+            this.setState({showPlaceholer: true, value: text});
         }
         if (this.onChangeText && typeof this.onChangeText === 'function') {
             this.onChangeText(text);
@@ -34,6 +34,7 @@ class CustomTextInput extends React.Component {
 
         this.state = {
             showPlaceholer: this.value && this.value.length > 0 ? false : true,
+            value: value,
             isFirstInit: true
         };
     };
@@ -48,6 +49,15 @@ class CustomTextInput extends React.Component {
         } else {
             this.input.setNativeProps({
                 text: ''
+            });
+        }
+    };
+    
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.value !== this.state.value) {
+            this.setState({
+                value: nextProps.value,
+                showPlaceholer: !nextProps.value.length
             });
         }
     };
@@ -86,7 +96,7 @@ class CustomTextInput extends React.Component {
 
                             if (this.state.isFirstInit) {
                                 this.input.setNativeProps({
-                                    text: this.value
+                                    text: this.state.value
                                 });
                                 this.setState({isFirstInit: false})
                             }
@@ -101,6 +111,7 @@ class CustomTextInput extends React.Component {
                     onChangeText={this._onChangeText}
                     placeholder={null}
                     placeholderTextColor={null}
+                    value={this.state.value}
                  />
             </View>
         );
