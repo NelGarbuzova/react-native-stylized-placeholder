@@ -1,4 +1,7 @@
-# react-native-stylized-placeholder
+# react-native-stylized-placeholder is deprecated
+This library is deprecated now and will not be supported. React Native team has fixed placeholder issue for now (https://github.com/facebook/react-native/commit/e6057095adfdc77ccbbff1c97b1e86b06dae340b).
+
+## Description
 Custom React Native TextInput for styling placeholder and prevent bug with allowFontScaling property for TextInput's placeholder.
 
 ## Installation
