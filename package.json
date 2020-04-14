@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NelGarbuzova/react-native-stylized-placeholder.git"
+    "url": "git+https://github.com/NeliHarbuzava/react-native-stylized-placeholder.git"
   },
   "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
