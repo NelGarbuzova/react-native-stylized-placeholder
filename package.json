@@ -18,9 +18,9 @@
   "author": "Neli Harbuzava",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NelGarbuzova/react-native-stylized-placeholder/issues"
+    "url": "https://github.com/NeliHarbuzava/react-native-stylized-placeholder/issues"
   },
-  "homepage": "https://github.com/NelGarbuzova/react-native-stylized-placeholder#readme",
+  "homepage": "https://github.com/NeliHarbuzava/react-native-stylized-placeholder#readme",
   "devDependencies": {
     "babel-jest": "23.0.1",
     "babel-preset-react-native": "4.0.0",
